@@ -1,38 +1,74 @@
+
 .App {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countries {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  height: 10px;
+  width: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.1fr 1.1fr;
+  grid-template-rows: 1.2fr 1.1fr 1.1fr;
+  gap: 0px 0px;
+  grid-template-areas: "search- stats-wrap stats-wrap stats-wrap" "search- stats-wrap stats-wrap stats-wrap" "search- stats-wrap stats-wrap stats-wrap";
+  height: 800px;
+}
+
+.search- {
+  grid-area: search-;
+  overflow-y: scroll;
+}
+
+.stats-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "total-cases new-cases total-recovered" "Critical new-deaths total-deaths" "active-cases cases-1m deaths-1m";
+  grid-area: stats-wrap;
+}
+
+.total-cases {
+  grid-area: total-cases;
+}
+
+.new-cases {
+  grid-area: new-cases;
+}
+
+.total-recovered {
+  grid-area: total-recovered;
+}
+
+.Critical {
+  grid-area: Critical;
+}
+
+.new-deaths {
+  grid-area: new-deaths;
+}
+
+.total-deaths {
+  grid-area: total-deaths;
+}
+
+.active-cases {
+  grid-area: active-cases;
+}
+
+.cases-1m {
+  grid-area: cases-1m;
+}
+
+.deaths-1m {
+  grid-area: deaths-1m;
 }
