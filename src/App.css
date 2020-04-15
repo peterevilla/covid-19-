@@ -2,16 +2,44 @@
 .App {
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
+  
 
 }
+
 
 .countries {
   display: flex;
+  text-decoration: none;
+  text-align: justify;
+  color: aliceblue;
+}
+
+.total-world {
+
+  font-size: 50px;
+  text-align: center;
+  margin-top: 30%;
+ 
+  
+}
+
+.form {
+
+  margin-top: 3%;
+  text-align: center;
+}
+
+.flag {
+
+  margin-left: 1%;
+  height: 55px;
+  width: 78px;
 }
 
 img {
-  height: 10px;
-  width: auto;
+  height: 15px;
+  width: 20px;
+  margin-right: 4%;
 }
 
 .grid-container {
@@ -21,13 +49,17 @@ img {
   gap: 0px 0px;
   grid-template-areas: "search- stats-wrap stats-wrap stats-wrap" "search- stats-wrap stats-wrap stats-wrap" "search- stats-wrap stats-wrap stats-wrap";
   height: 800px;
+  margin-top: 5%;
+
 }
 
 .search- {
   grid-area: search-;
   overflow-y: scroll;
+  text-align: center;
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://images.pexels.com/photos/2422/sky-earth-galaxy-universe.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  
 }
-
 .stats-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -35,40 +67,74 @@ img {
   gap: 1px 1px;
   grid-template-areas: "total-cases new-cases total-recovered" "Critical new-deaths total-deaths" "active-cases cases-1m deaths-1m";
   grid-area: stats-wrap;
+
 }
 
 .total-cases {
   grid-area: total-cases;
+  text-align: center;
+  border: 1px solid lightgray;
+
 }
 
 .new-cases {
   grid-area: new-cases;
+  text-align: center;
+  color: rgb(230, 164, 89);
+  border: 1px solid lightgray;
 }
 
 .total-recovered {
   grid-area: total-recovered;
+  text-align: center;
+  color: rgb(73, 206, 152);
+  border: 1px solid lightgray;
 }
 
 .Critical {
   grid-area: Critical;
+  text-align: center;
+  color: rgb(255, 69, 0);
+  border: 1px solid lightgray;
 }
 
 .new-deaths {
   grid-area: new-deaths;
+  text-align: center;
+  color: rgb(231, 42, 42);
+  border: 1px solid lightgray;
 }
 
 .total-deaths {
   grid-area: total-deaths;
+  text-align: center;
+  color: rgb(185, 30, 30);
+  border: 1px solid lightgray;
 }
 
 .active-cases {
   grid-area: active-cases;
+  text-align: center;
+  color: rgb(54, 52, 50);
+  border: 1px solid lightgray;
 }
 
 .cases-1m {
   grid-area: cases-1m;
+  text-align: center;
+  color: rgb(54, 52, 50);
+  border: 1px solid lightgray;
 }
 
 .deaths-1m {
   grid-area: deaths-1m;
+  text-align: center;
+  color: rgb(54, 52, 50);
+  border: 1px solid lightgray;
 }
+
+.stats {
+  font-size: 50px;
+  font-weight: bold;
+}
+

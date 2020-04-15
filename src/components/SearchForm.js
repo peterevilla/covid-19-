@@ -1,30 +1,34 @@
 import React, { useState } from "react";
+import { Input } from 'semantic-ui-react'
 
 const SearchForm = (props) => {
   const [search, setSearch] = useState("");
 
   const handleOnchange = e => {
     setSearch(e.target.value);
+    
   };
+
+  
 
   const submitForm = (e) => {
     e.preventDefault()
-    console.log(search);
-    // props.onSearch(search)
+    e.target.reset()
      
     
   };
 
   return (
-    <form onSubmit={submitForm}>
+    <form className='form' onSubmit={submitForm}>
       <label>
-        <input
+        <Input
           name="search"
           placeholder="search country"
           onChange={handleOnchange}
           values={search}
         />
       </label>
+      <button >search</button>
     </form>
   );
 };

@@ -1,50 +1,45 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Stats from "./components/Stats";
+import CountryPage from "./components/CountryPage";
 import CountryList from "./components/CountryList";
 import SearchForm from "./components/SearchForm";
 import axios from "axios";
+import { Route, Link } from 'react-router-dom'
+import Home from "./components/Home";
 
 const App = () => {
   const [list, setList] = useState([]);
 
+  
+
 useEffect(() =>{
 
   axios
-  .get(`https://corona.lmao.ninja/countries?sort=country`)
+  .get(`https://corona.lmao.ninja/countries?sort=`)
   .then(response => {
-    setList(response.data);
+
+      setList(response.data)
+     
 
   })
   .catch(err => console.log(err.response));
 
 },[]);
-
-// const onSearch = (query) => {
-
-//   axios
-//   .get(`https://corona.lmao.ninja/countries/${query}`)
-//   .then(response => {
-//     setList(response.data);
-
-//   })
-//   .catch(err => console.log(err.response));
-
-// } 
-
-  
-   
 console.log(list)
 
   return (
+    <body className='title'>
+      <Link  to='/'><h1 >COVID-19 by Country</h1></Link>
     <div className="grid-container">
-      <h1>COVID-19</h1>
+      
       <div className="search-">
-        <SearchForm />
+        {/* <SearchForm /> */}
         <CountryList list={list} />
       </div>
-      <Stats />
+      <Route exact path="/" render={routeProps => { return (<Home match={routeProps.match} list={list}/>);}}/>
+      <Route path="/countries/:country" render={routeProps => { return (<CountryPage match={routeProps.match} list={list} />) }} />
     </div>
+    </body>
 
    
   );
